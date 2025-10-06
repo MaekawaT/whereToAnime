@@ -8,10 +8,10 @@ interface Platform {
   id: string
   name: string
   displayName: string
-  logoUrl: string
-  websiteUrl: string
+  logoUrl: string | null
+  websiteUrl: string | null
   monthlyPrice: number
-  freeTrial: boolean
+  freeTrial?: boolean
   freeTrialDays?: number
   availableEpisodes?: number
   hasSub?: boolean
@@ -151,7 +151,7 @@ export default function PriceComparisonTable({
                   </div>
 
                   <a
-                    href={platform.websiteUrl}
+                    href={platform.websiteUrl || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 md:px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium text-sm whitespace-nowrap"

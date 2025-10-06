@@ -21,7 +21,7 @@ interface JikanAnime {
 
 // Enable route segment config for caching
 export const revalidate: number = 3600; // Revalidate every hour
-export const dynamic = 'force-cache'; // Force static caching
+export const dynamic = 'force-static'; // Force static caching
 
 export async function GET() {
   try {
